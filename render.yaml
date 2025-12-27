@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: hacker-news-jobs-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --config gunicorn_config.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: CACHE_TIMEOUT
+        value: 300
+      - key: SCRAPE_INTERVAL
+        value: 30
+      - key: FLASK_ENV
+        value: production
+    healthCheckPath: /health
+
+databases:
+  - name: hacker-news-jobs-db
+    plan: free
+    databaseName: hackernewsjobs
+    user: hackernewsjobs
+
