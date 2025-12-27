@@ -6,7 +6,7 @@ flask-cors==4.0.0
 flask-restx==1.3.0
 gunicorn==21.2.0
 psycopg2-binary==2.9.9
-sqlalchemy==2.0.23
+sqlalchemy
 flask-sqlalchemy==3.1.1
 apscheduler==3.10.4
 python-dotenv==1.0.0
