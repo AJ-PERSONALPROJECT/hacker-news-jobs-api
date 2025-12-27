@@ -6,6 +6,8 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --config gunicorn_config.py
     envVars:
+      -key: PYTHON_VERSION
+        value: 3.11.10
       - key: PORT
         value: 10000
       - key: CACHE_TIMEOUT
